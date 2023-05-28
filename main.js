@@ -10,7 +10,6 @@ var favoriteButton = document.querySelector('.favorite');
 var clearButton = document.querySelector('.clear');
 var myFavoritesButton = document.querySelector('.show-favorites');
 var goBackButton = document.querySelector('.back');
-var removeButton = document.querySelector('.remove');
 
 var favoritesPage = document.querySelector('.favorites-page');
 var mainPage = document.querySelector('.main');
@@ -22,30 +21,51 @@ var favoritesList = document.querySelector('.favs-list');
 // Variables
 
 var sides = [
-    "Rice Pilaf"
+    "Miso Glazed Carrots",
+    "Coleslaw",
+    "Garden Salad",
+    "Crispy Potatoes",
+    "Sweet Potato Tots",
+    "Coconut Rice",
+    "Caeser Salad",
+    "Shrimp Summer Rolls",
+    "Garlic Butter Mushrooms",
+    "Hush Puppies",
 ]
 var mains = [
-    "Steak"
+    "Spaghetti and Meatballs",
+    "Pineapple Chicken",
+    "Shakshuka",
+    "Thai Yellow Curry",
+    "Bibimbap",
+    "Chicken Parmesean",
+    "Butternut Squash Soup",
+    "BBQ Chicken Burgers",
+    "Ramen",
+    "Empanadas",
+    "Chicken Fried Rice",
+    "Sheet Pan Fajitas",
+    "Margarita Pizza",
 ]
 var desserts = [
-"Apple Pie",
-"Lemon Meringue Pie",
-"Black Forest Cake",
-"Banana Bread",
-"Peach Cobbler",
-"Cheesecake",
-"Funfetti Cake",
-"Baklava",
-"Flan",
-"Macarons",
-"Macaroons",
-"Chocolate Cupcakes",
-"Pavlova",
-"Pumpkin Pie",
-"Key Lime Pie",
-"Tart Tatin",
-"Croissants",
-"Eclairs",
+    "Apple Pie",
+    "Lemon Meringue Pie",
+    "Black Forest Cake",
+    "Banana Bread",
+    "Peach Cobbler",
+    "Cheesecake",
+    "Funfetti Cake",
+    "Baklava",
+    "Flan",
+    "Macarons",
+    "Macaroons",
+    "Chocolate Cupcakes",
+    "Pavlova",
+    "Pumpkin Pie",
+    "Key Lime Pie",
+    "Tart Tatin",
+    "Croissants",
+    "Eclairs",
 ]
 var currentRecipe = {
     type: '',
@@ -56,14 +76,14 @@ var favoriteRecipes = [];
 
 // Event Listeners
 
+window.addEventListener('load', function(){
+    getLocalStorage();
+})
+
 letsCookButton.addEventListener('click', function(){
     getInput();
     getRandomRecipe(getRandomIndex());
     displayRecipe();
-})
-
-window.addEventListener('load', function(){
-    getLocalStorage();
 })
 
 clearButton.addEventListener('click', clearRecipe);
@@ -84,8 +104,9 @@ goBackButton.addEventListener('click', function(){
 });
 
 favoritesList.addEventListener('click', function(event) {
-     removeFavorite(event);
-     setLocalStorage();
+    if (event.target.className === 'remove')
+    removeFavorite(event);
+    setLocalStorage();
 })
 
 
@@ -144,7 +165,6 @@ function toggleView() {
     headerFavorites.classList.toggle('hidden');
     favoritesPage.classList.toggle('hidden');
     goBackButton.classList.toggle('hidden');
-    removeButton.classList.toggle('hidden');
     mainPage.classList.toggle('hidden');
     myFavoritesButton.classList.toggle('hidden');
     headerTitle.classList.toggle('hidden');
@@ -154,7 +174,10 @@ function displayFavorites() {
     favoritesList.innerHTML = '';
 
     for (var i = 0; i < favoriteRecipes.length; i++){
-        favoritesList.innerHTML += `<article class="card" id="${favoriteRecipes[i].dish}"><h3>${favoriteRecipes[i].dish}</h3></article>`;
+        favoritesList.innerHTML += `<article class="card" id="${favoriteRecipes[i].dish}">
+        <h3>${favoriteRecipes[i].dish}</h3>
+        <button class="remove">&#128465</button>
+        </article>`;
     }
 }
 
@@ -166,7 +189,7 @@ function clearInput() {
 
 function removeFavorite(event) {
     for (var i = 0; i < favoriteRecipes.length; i++){
-        if (event.target.id === favoriteRecipes[i].dish){
+        if (event.target.closest('.card').id === favoriteRecipes[i].dish){
             favoriteRecipes.splice(i, 1);
         }
     }
