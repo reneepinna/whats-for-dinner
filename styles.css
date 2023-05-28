@@ -113,6 +113,8 @@ h4 {
     content: "*";
 }
 
+
+
 /* ~~~~~ Favorites view ~~~~~ */
 
 .favorites-page {
@@ -145,4 +147,12 @@ h4 {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.remove {
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+    background-color:#95a5a6;
+    margin-left: 10px;
 }
