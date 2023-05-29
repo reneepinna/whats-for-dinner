@@ -1,51 +1,28 @@
-# What's for Dinner?
-
-## Overview
-
-What's for dinner? The ultimate question. You will be building an app that helps users choose a recipe and put together meals. 
-
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
-
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/dinner.html). 
-
-## Learning Goals
-
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
-
-## Setup
-
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
-
-______________________________________________________  
-# README Template  
-Before turning this project in, erase this line and everything above it and fill in the info below.  
-______________________________________________________  
-
 # What's for Dinner? 
 
 ### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+This application helps the user pick a dish to make. Anyone you stuggles to come up with ideas or make decisions can be beifited by this app. They can track their favorite ideas for future reference.
+
 
 ### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+1. Fork and clone this repo.
+2. Type `cd whats-for-dinner` to move into the root directory
+3. Open the webpage by typing `open index.html`
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+![Preview of favorites page](assets/favoriteView.png)
 
 ### Context:
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+This project for Turing Mod 1 Front End students took me about 15 hours. Much of that time was spent getting the hang of CSS.
 
 ### Contributors:
-[//]: <> (Who worked on this application? Link to their GitHubs.)
+Renee Pinna: https://github.com/reneepinna
 
 ### Learning Goals:
-[//]: <> (What were the learning goals of this project? What tech did you work with?)
+The goal was to learn how to build a website to comp with HTML, CSS, and JavaScript. Additionally, I learned how to use local storage for this project, giving users the ability to keep their favorites.
+
 
 ### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+The CSS component on this project was by far the most challenging for me. I found that it was often unpredicatble for me and required a lot of tinkering to get right. Each time I finally got an element to the size and place I wanted it I was absolutely delighted. 
+
+A big win for me was getting local storage to work. It ended up being far easier than I was expecting. I am so excited to apply it in future projects.
